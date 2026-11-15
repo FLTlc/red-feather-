@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "pattern": [
+    "DDD",
+    "DBD",
+    "DDD"
+  ],
+  "key": {
+    "D": { "item": "minecraft:diamond" },
+    "B": { "item": "minecraft:diamond_block" }
+  },
+  "result": {
+    "id": "redfeather:divine_stick",
+    "count": 1
+  }
+}
