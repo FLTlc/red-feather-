@@ -1,0 +1,25 @@
+modLoader = "javafml"
+loaderVersion = "[4,)"
+license = "MIT"
+
+[[mods]]
+modId = "redfeather"
+version = "1.0.0"
+displayName = "Red Feather"
+description = '''
+Tiens la Plume rouge en main : plus tu marches, plus tu vas vite !
+'''
+
+[[dependencies.redfeather]]
+modId = "neoforge"
+type = "required"
+versionRange = "[21.1.0,)"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies.redfeather]]
+modId = "minecraft"
+type = "required"
+versionRange = "[1.21.1]"
+ordering = "NONE"
+side = "BOTH"
