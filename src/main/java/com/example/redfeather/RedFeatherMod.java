@@ -20,6 +20,12 @@ public class RedFeatherMod {
             new Item.Properties().stacksTo(1).rarity(Rarity.EPIC).fireResistant()
     );
 
+    public static final DeferredItem<DivineStickItem> DIVINE_STICK = ITEMS.registerItem(
+            "divine_stick",
+            DivineStickItem::new,
+            new Item.Properties()
+    );
+
     public RedFeatherMod(IEventBus modEventBus) {
         ITEMS.register(modEventBus);
         modEventBus.addListener(this::addCreative);
@@ -28,6 +34,9 @@ public class RedFeatherMod {
     private void addCreative(BuildCreativeModeTabContentsEvent event) {
         if (event.getTabKey() == CreativeModeTabs.INGREDIENTS) {
             event.accept(RED_FEATHER);
+        }
+        if (event.getTabKey() == CreativeModeTabs.COMBAT) {
+            event.accept(DIVINE_STICK);
         }
     }
 }
