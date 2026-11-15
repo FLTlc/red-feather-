@@ -1,4 +1,6 @@
 {
   "item.redfeather.red_feather": "Red Feather",
-  "item.redfeather.divine_stick": "Divine Stick"
+  "item.redfeather.divine_stick": "Divine Stick",
+  "item.redfeather.pocket_scepter": "Pocket Scepter",
+  "message.redfeather.no_pocket": "The pocket dimension is not available in this world."
 }
