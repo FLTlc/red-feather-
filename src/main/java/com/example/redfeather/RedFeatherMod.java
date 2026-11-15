@@ -5,6 +5,7 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Rarity;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.common.Mod;
+import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import net.neoforged.neoforge.event.BuildCreativeModeTabContentsEvent;
@@ -26,9 +27,18 @@ public class RedFeatherMod {
             new Item.Properties()
     );
 
+    public static final DeferredItem<PocketScepterItem> POCKET_SCEPTER = ITEMS.registerItem(
+            "pocket_scepter",
+            PocketScepterItem::new,
+            new Item.Properties()
+    );
+
     public RedFeatherMod(IEventBus modEventBus) {
         ITEMS.register(modEventBus);
         modEventBus.addListener(this::addCreative);
+        NeoForge.EVENT_BUS.addListener(PocketScepterItem::onPlayerTick);
+        NeoForge.EVENT_BUS.addListener(PocketScepterItem::onBlockBreak);
+        NeoForge.EVENT_BUS.addListener(PocketScepterItem::onExplosion);
     }
 
     private void addCreative(BuildCreativeModeTabContentsEvent event) {
@@ -37,6 +47,9 @@ public class RedFeatherMod {
         }
         if (event.getTabKey() == CreativeModeTabs.COMBAT) {
             event.accept(DIVINE_STICK);
+        }
+        if (event.getTabKey() == CreativeModeTabs.TOOLS_AND_UTILITIES) {
+            event.accept(POCKET_SCEPTER);
         }
     }
 }
