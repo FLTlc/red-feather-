@@ -1,4 +1,6 @@
 {
   "item.redfeather.red_feather": "Plume rouge",
-  "item.redfeather.divine_stick": "Bâton divin"
+  "item.redfeather.divine_stick": "Bâton divin",
+  "item.redfeather.pocket_scepter": "Sceptre de poche",
+  "message.redfeather.no_pocket": "La dimension de poche n'est pas disponible dans ce monde."
 }
